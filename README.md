@@ -2,6 +2,10 @@
 
 # 📝 ToDo Console Manager – Proposal
 
+## 👩‍💻👨‍💻 **Team member**
+Karel Kisaku @kkisaku
+Syviwha Ngulungu @sweetiesyvi
+
 ## 📌 **App Idea**
 
 A simple **console-based application** that allows users to manage daily tasks (ToDo list).
@@ -30,7 +34,7 @@ Users can **add, view, complete, and delete tasks** easily from the terminal.
 
 ## 🛠️ **Tech Stack**
 
-* **Language:** C#
+* **Language:** C# (if allow or we will use java or python)
 * **IDE:** Visual Studio
 * **Version Control:** GitHub
 * **Environment:** Virtual Machine (VM)
