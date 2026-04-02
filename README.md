@@ -4,6 +4,7 @@
 
 ## 👩‍💻👨‍💻 **Team member**
 Karel Kisaku @kkisaku
+
 Syviwha Ngulungu @sweetiesyvi
 
 ## 📌 **App Idea**
