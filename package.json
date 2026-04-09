@@ -1,7 +1,8 @@
 {
   "name": "todo-console-manager",
   "version": "1.0.0",
-  "description": "Karel Kisaku @kkisaku",
+  "description": "ToDo Web App CIS 486",
+   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,12 +14,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+ 
   "bugs": {
     "url": "https://github.com/sweetiesyvi/ToDo-Console-Manager/issues"
   },
   "homepage": "https://github.com/sweetiesyvi/ToDo-Console-Manager#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "mongodb": "^7.1.1"
   }
 }
