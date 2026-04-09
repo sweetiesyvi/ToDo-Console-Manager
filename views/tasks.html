@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDo - ToDo App</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="welcome"></h1>
+    <input type="text" id="taskInput" placeholder="New task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    const userId = window.location.pathname.split('/tasks/')[1];
+    const userName = localStorage.getItem('userName');
+    document.getElementById('welcome').textContent = `Welcome, ${userName}!`;
+
+    const API = `/api/tasks/${userId}`;
+
+    async function loadTasks() {
+      const res = await fetch(API);
+      const tasks = await res.json();
+
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+      tasks.forEach(t => {
+        const li = document.createElement('li');
+        li.innerHTML = `${t.completed ? '<s>' + t.title + '</s>' : t.title}
+                        <button onclick="deleteTask('${t._id}')">❌</button>
+                        <button onclick="completeTask('${t._id}')">✔</button>`;
+        list.appendChild(li);
+      });
+    }
+
+    async function addTask() {
+      const input = document.getElementById('taskInput');
+      if (!input.value) return;
+      const res = await fetch('/api/tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: input.value, userId })
+      });
+      const data = await res.json();
+      alert(data.message);
+      input.value = '';
+      loadTasks();
+    }
+
+    async function deleteTask(id) {
+      const res = await fetch(`/api/tasks/${id}`, { method: 'DELETE' });
+      const data = await res.json();
+      alert(data.message);
+      loadTasks();
+    }
+
+    async function completeTask(id) {
+      const res = await fetch(`/api/tasks/${id}`, { method: 'PUT' });
+      const data = await res.json();
+      alert(data.message);
+      loadTasks();
+    }
+
+    loadTasks();
+  </script>
+</body>
+</html>
