@@ -1,0 +1,24 @@
+{
+  "name": "todo-console-manager",
+  "version": "1.0.0",
+  "description": "Karel Kisaku @kkisaku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweetiesyvi/ToDo-Console-Manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sweetiesyvi/ToDo-Console-Manager/issues"
+  },
+  "homepage": "https://github.com/sweetiesyvi/ToDo-Console-Manager#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
