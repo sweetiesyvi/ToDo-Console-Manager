@@ -27,28 +27,27 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 
 ### 👤 User System
 
-* [ ] Create user (name only, no password)
-* [ ] Assign random avatar to each user
-* [ ] Display list of users
-* [ ] Navigate to user task page
+* [x] Create user (name only, no password)
+* [x] Assign random avatar to each user
+* [x] Display list of users
+* [x] Navigate to user task page
 
 ---
 
 ### 📋 Task Management (CRUD)
 
-* [ ] Add task
-* [ ] Delete task
-* [ ] Mark task as completed
-* [ ] Display tasks per user
+* [x] Add task
+* [x] Delete task
+* [x] Mark task as completed
+* [x] Display tasks per user
 
 ---
 
 ### 🎨 UI / UX Features
 
-* [ ] Welcome message per user
-* [ ] Alert messages for actions (add / delete / update)
-* [ ] Simple clean interface
-* [ ] Favicon icon added
+* [x] Welcome message per user
+* [x] Alert messages for actions (add / delete / update)
+* [x] Simple clean interface
 
 ---
 
@@ -89,7 +88,7 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 * [x] CRUD System (full task management)
 * [x] Authentication (user and password(not required) - simplified system)
 * [x] UI / UX Improvement
-* [ ] Deployment (GCP VM)
+* [x] Deployment (GCP VM)
 
 ---
 
@@ -97,29 +96,28 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 
 ### 🟢 M1 - Setup
 
-* [ ] Setup Express server
-* [ ] Connect MongoDB Atlas
+* [x] Setup Express server
+* [x] Connect MongoDB Atlas
 
 ### 🟡 M2 - User System
 
-* [ ] Create user system
-* [ ] Assign random avatar
-* [ ] Display users list
+* [x] Create user system
+* [x] Assign random avatar
+* [x] Display users list
 
 ### 🔵 M3 - Task System
 
-* [ ] Add task
-* [ ] Delete task
-* [ ] Mark task as complete
-* [ ] Get tasks per user
+* [x] Add task
+* [x] Delete task
+* [x] Mark task as complete
+* [x] Get tasks per user
 
 ### 🟣 M4 - UI & Finalization
 
-* [ ] Users page UI
-* [ ] Tasks page UI
-* [ ] Add welcome message
-* [ ] Add alert notifications
-* [ ] Add favicon
+* [x] Users page UI
+* [x] Tasks page UI
+* [x] Add welcome message
+* [x] Add alert notifications
 
 ---
 
