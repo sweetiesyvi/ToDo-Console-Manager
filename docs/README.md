@@ -5,7 +5,7 @@
 ## 👩‍💻👨‍💻 Team Members
 
 * Karel Kisaku (@kkisaku)
-* Syviwha Ngulungu (@sweetiesyvi)
+* Syviwha Ngulungu (@sweetiesyvi[https://github.com/sweetiesyvi])
 
 ---
 
