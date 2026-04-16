@@ -30,7 +30,7 @@ jobs:
           SSH_USER: karelkis23 #${{ secrets.SSH_USER }}
           SSH_HOST: 34.16.229.184 #${{ secrets.SSH_HOST }}
           APP_DIR: todo #${{ vars.APP_DIR }}
-          PM2_NAME: todo #${{ vars.PM2_NAME }}
+          PM2_NAME: server #${{ vars.PM2_NAME }}
         run: |
           ssh -i ~/.ssh/id_rsa -T "$SSH_USER@$SSH_HOST" <<EOF
             set -e
