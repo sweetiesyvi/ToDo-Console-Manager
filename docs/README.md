@@ -11,9 +11,9 @@
 
 ## 📌 App Idea
 
-A simple **multi-user ToDo web application** where users can enter their name, receive a random avatar, and manage their personal tasks.
+A simple **multi-user ToDo web application prototype** where users can enter their name, receive a random avatar, and manage their personal tasks.
 
-Each user has their own task list stored in a database.
+Each user has their own task list stored in a MongoDB database.
 
 ---
 
@@ -27,43 +27,44 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 
 ### 👤 User System
 
-* [x] Create user (name only, no password)
-* [x] Assign random avatar to each user
-* [x] Display list of users
-* [x] Navigate to user task page
+* Create user (name only, no password)
+* Assign random avatar to each user
+* Display list of users
+* Navigate to user task page
 
 ---
 
 ### 📋 Task Management (CRUD)
 
-* [x] Add task
-* [x] Delete task
-* [x] Mark task as completed
-* [x] Display tasks per user
+* Add task
+* Delete task
+* Mark task as completed
+* Display tasks per user
+* 💬 Add comments on tasks *(planned for future)*
 
 ---
 
 ### 🎨 UI / UX Features
 
-* [x] Welcome message per user
-* [x] Alert messages for actions (add / delete / update)
-* [x] Simple clean interface
-
+* Welcome message per user
+* Alert messages for actions (add / delete / update)
+* Simple clean interface
+* Back navigation button *(planned for future improvement)*
 ---
 
 ## 🛠️ Tech Stack
 
-* **Backend:** Node.js (Express)
-* **Frontend:** HTML, CSS, JavaScript
-* **Database:** MongoDB Atlas
-* **Version Control:** GitHub
-* **Deployment:** GCP VM (planned)
+* Backend: Node.js (Express)
+* Frontend: HTML, CSS, JavaScript
+* Database: MongoDB Atlas
+* Version Control: GitHub
+* Deployment: GCP VM 
 
 ---
 
 ## 🏗️ Architecture
 
-* `server.js` → main backend server
+* server.js → main backend server
 * REST API → CRUD operations
 * MongoDB → data storage
 * Static HTML pages → frontend UI
@@ -83,41 +84,85 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 
 ## 📦 Selected Capability Boxes (Pathway 1)
 
-* [x] Advanced Architecture (Express + modular routes)
-* [x] Database Integration (MongoDB Atlas)
-* [x] CRUD System (full task management)
-* [x] Authentication (user and password(not required) - simplified system)
-* [x] UI / UX Improvement
-* [x] Deployment (GCP VM)
+| Box                     | What We Did                                      | Evidence                               | Notes                             |
+| ----------------------- | ------------------------------------------------ | -------------------------------------- | --------------------------------- |
+| Advanced Architecture   | Built REST API using Node.js + Express           | `/server.js` routes                    | Clean backend structure           |
+| Database Integration    | Used MongoDB Atlas for persistent storage        | MongoDB connection                     | Cloud-based database              |
+| CRUD System             | Full task management (create/read/update/delete) | `/api/tasks` routes                    | Core system implemented           |
+| UI / UX Improvement     | Alerts, avatars, navigation flow                 | HTML frontend pages                    | Better user experience            |
+| Debugging               | Fixed Node.js ES module configuration issue      | Code fix (no external proof available) | Issue resolved during development |
+| System / Infrastructure | Connected backend to MongoDB Atlas cloud DB      | `.env + server configuration`          | Full-stack setup                  |
 
 ---
 
-## 🚀 Milestones
+## 🔧 Debug Case Study
 
-### 🟢 M1 - Setup
+### ❗ Problems
 
-* [x] Setup Express server
-* [x] Connect MongoDB Atlas
+The Node.js server initially failed to run due to ES Module configuration issues.
+To create the GCP on the first place was a little challenge
 
-### 🟡 M2 - User System
+### 🧠 Cause
 
-* [x] Create user system
-* [x] Assign random avatar
-* [x] Display users list
+Mismatch between ES module syntax (`import/export`) and Node.js configuration.
+To find a free spot on the zone's list
 
-### 🔵 M3 - Task System
+---
 
-* [x] Add task
-* [x] Delete task
-* [x] Mark task as complete
-* [x] Get tasks per user
+### 🛠️ Fix
 
-### 🟣 M4 - UI & Finalization
+* Updated `package.json` to support ES modules
+* Ensured consistent syntax across backend files
+* Restarted server successfully
+* Search on the all list until we find
+---
 
-* [x] Users page UI
-* [x] Tasks page UI
-* [x] Add welcome message
-* [x] Add alert notifications
+### 📌 Important Note
+
+No direct screenshots or external logs were captured during the debugging process.
+However, the issue was identified and resolved during development, and the final working state is reflected in the current codebase.
+
+---
+
+## 🚀 Sprint 99 (Future Improvements)
+
+### ✨ Planned Features
+
+* Task editing functionality
+* Advanced search/filter system
+* Improved UI using Bootstrap or Tailwind
+* Analyse of performance 
+* User validation (prevent duplicate names)
+* Authentication(password, authorization(verification short process))
+* Better navigation flow (Back button implementation)
+* Add timestamps to tasks
+---
+
+### 🛠️ Improvement
+
+* Improve UI/UX structure
+* The delete function for the task board
+
+---
+
+### 🐞 Known Limitations
+
+* No authentication system (by design, prototype scope)
+* Basic UI styling
+* Comments system
+
+---
+
+### 💡 Design Philosophy
+
+This project was intentionally built as a **prototype**, focusing on:
+
+* Core CRUD functionality
+* Multi-user separation
+* Clean backend architecture
+* MongoDB integration
+
+Advanced features were intentionally deferred to future iterations.
 
 ---
 
@@ -126,7 +171,8 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 * 📌 GitHub Repo: https://github.com/sweetiesyvi/ToDo-Console-Manager
 * 📋 Issues: https://github.com/sweetiesyvi/ToDo-Console-Manager/issues
 * 🧱 Milestones: https://github.com/sweetiesyvi/ToDo-Console-Manager/milestones
-* ❄ Render: https://todo-console-manager.onrender.com
+*  ❄ Render: https://todo-console-manager.onrender.com
+* ⚡ Web app: https://todo.barrycumbie.com/
 
 ---
 
@@ -135,37 +181,32 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 * Instructor added as collaborator
 * MongoDB Atlas connected via environment variables (.env)
 * SSH access prepared for GCP deployment
-* Production ready architecture (future step)
+* Production-ready structure (future step)
 
 ---
 
 ## 🚀 How to Run Locally
 
-```bash id="run1"
+```bash id="runfinal1"
 npm install
 node server.js
 ```
 
 Open browser:
 
-```
+```id="runfinal2"
 http://localhost:3000
 ```
-```
-https://todo-console-manager.onrender.com
-```
 
 ---
 
-## 💡 Notes
+## 💡 Final Notes
 
-This project focuses on:
+This project demonstrates a full-stack prototype application with:
 
 * Clean architecture
-* Simple CRUD logic
-* Multi-user separation
-* Scalable backend structure
+* REST API design
+* MongoDB integration
+* Multi-user task management
 
-No authentication was added to keep the project lightweight and within scope.
-
----
+As a prototype, the focus was placed on core functionality rather than advanced UI or extended feature sets. Future improvements are clearly outlined in Sprint 99.
