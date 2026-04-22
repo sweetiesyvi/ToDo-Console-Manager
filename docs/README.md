@@ -97,24 +97,24 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 
 ## 🔧 Debug Case Study
 
-### ❗ Problems
+### ❗ Problem
+The Node.js server initially failed to run due to ES Module configuration issues.  
+Setting up the GCP environment was also challenging due to limited available zones.
 
-The Node.js server initially failed to run due to ES Module configuration issues.
-To create the GCP on the first place was a little challenge
+---
 
 ### 🧠 Cause
-
-Mismatch between ES module syntax (`import/export`) and Node.js configuration.
-To find a free spot on the zone's list
+Mismatch between ES module syntax (import/export) and Node.js configuration.  
+Additionally, some GCP regions had limited availability for free-tier resources.
 
 ---
 
 ### 🛠️ Fix
+- Updated package.json to support ES modules  
+- Ensured consistent syntax across backend files  
+- Restarted server successfully  
+- Searched across available GCP zones until a working configuration was found
 
-* Updated `package.json` to support ES modules
-* Ensured consistent syntax across backend files
-* Restarted server successfully
-* Search on the all list until we find
 ---
 
 ### 📌 Important Note
@@ -138,7 +138,7 @@ However, the issue was identified and resolved during development, and the final
 * Add timestamps to tasks
 ---
 
-### 🛠️ Improvement
+### 🛠️ Improvements
 
 * Improve UI/UX structure
 * The delete function for the task board
