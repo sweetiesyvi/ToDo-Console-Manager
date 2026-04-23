@@ -18,7 +18,8 @@ body {
   background: #fff;
   padding: 30px;
   border-radius: 15px;
-  width: 350px;
+  width: 90%;
+  max-width: 600px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-align: center;
 }
@@ -65,13 +66,14 @@ ul {
 
 li {
   background: #f9f9f9;
-  padding: 12px;
+  padding: 12px 15px;
   margin-bottom: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: 0.2s;
+  font-size: 16px;
 }
 
 li:hover {
@@ -84,12 +86,17 @@ li button {
   font-size: 12px;
 }
 
+#userList li {
+  font-size: 18px;
+  padding: 15px;
+}
+
 /* Task completed */
 s {
   color: #aaa;
 }
 
-/* Petit style pour avatar */
+
 li b {
   margin-left: 5px;
 }
