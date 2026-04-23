@@ -28,14 +28,15 @@
       list.innerHTML = '';
       tasks.forEach(t => {
         const li = document.createElement('li');
-       li.innerHTML = `
-      <span>${t.completed ? '<s>' + t.title + '</s>' : t.title}</span>
-      <div>
-        <button onclick="completeTask('${t._id}')">✔</button>
-        <button onclick="deleteTask('${t._id}')">❌</button>
-      </div>
-`;
-      });
+        li.innerHTML = `
+        <span>${t.completed ? '<s>' + t.title + '</s>' : t.title}</span>
+        <div>
+          <button onclick="completeTask('${t._id}')">✔</button>
+          <button onclick="deleteTask('${t._id}')">❌</button>
+        </div>
+      `;
+      list.appendChild(li); // 🔥 IMPORTANT
+    });
     }
 
     async function addTask() {
