@@ -22,8 +22,10 @@
       const ul = document.getElementById('userList');
       ul.innerHTML = '';
       users.forEach(u => {
-        const li = document.createElement('li');
-        li.innerHTML = `${u.avatar} <b>${u.name}</b> <button onclick="enterTasks('${u._id}', '${u.name}')">Enter</button>`;
+      const li = document.createElement('li');
+       li.innerHTML = `
+      <span>${u.avatar} <b>${u.name}</b></span>
+      <button onclick="enterTasks('${u._id}', '${u.name}')">Enter</button>`;
         ul.appendChild(li);
       });
     }
