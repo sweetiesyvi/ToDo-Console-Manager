@@ -84,17 +84,18 @@ async function startServer() {
         res.json({ message: 'Task updated successfully' }); });*/
     app.put('/api/tasks/:id', async (req, res) => {
       const { id } = req.params;
-      const { title } = req.body;
+      const { title, completed } = req.body;
       let updateData = {};
-      if (title) {
+      if (title !== undefined) {
         updateData.title = title;
-      } else {
-        updateData.completed = true;
+      }
+      if (completed !== undefined) {
+        updateData.completed = completed;
       }
       await tasksCollection.updateOne(
         { _id: new ObjectId(id) },
         { $set: updateData }
-      );
+       );
       res.json({ message: 'Task updated successfully' });
       });
 
