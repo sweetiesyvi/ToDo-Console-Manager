@@ -73,7 +73,6 @@ async function startServer() {
         { returnDocument: 'after' }
       );
       res.json({ message: 'Task marked as completed', task: result.value });*/
-      app.put('/api/tasks/:id', async (req, res) => {
         const { title } = req.body;
         let updateData = {};
         if (title) {
