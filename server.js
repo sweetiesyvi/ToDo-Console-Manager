@@ -65,14 +65,14 @@ async function startServer() {
       res.status(201).json({ message: 'Task added', task: result });
     });
 
-    app.put('/api/tasks/:id', async (req, res) => {
+    /*app.put('/api/tasks/:id', async (req, res) => {
       /*const { id } = req.params;
       const result = await tasksCollection.findOneAndUpdate(
         { _id: new ObjectId(id) },
         { $set: { completed: true } },
         { returnDocument: 'after' }
-      );
-      res.json({ message: 'Task marked as completed', task: result.value });*/
+      );*/
+      /*res.json({ message: 'Task marked as completed', task: result.value });
         const { title } = req.body;
         let updateData = {};
         if (title) {
@@ -81,8 +81,22 @@ async function startServer() {
           updateData.completed = true;
         }
         await Task.findByIdAndUpdate(req.params.id, updateData);
-        res.json({ message: 'Task updated successfully' });
-    });
+        res.json({ message: 'Task updated successfully' }); });*/
+    app.put('/api/tasks/:id', async (req, res) => {
+      const { id } = req.params;
+      const { title } = req.body;
+      let updateData = {};
+      if (title) {
+        updateData.title = title;
+      } else {
+        updateData.completed = true;
+      }
+      await tasksCollection.updateOne(
+        { _id: new ObjectId(id) },
+        { $set: updateData }
+      );
+      res.json({ message: 'Task updated successfully' });
+      });
 
     app.delete('/api/tasks/:id', async (req, res) => {
       const { id } = req.params;
