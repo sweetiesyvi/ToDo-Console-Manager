@@ -87,8 +87,8 @@ As a user, I want to enter my name, access my personal dashboard, and manage my 
 | Box                     | What We Did                                      | Evidence                               | Notes                             |
 | ----------------------- | ------------------------------------------------ | -------------------------------------- | --------------------------------- |
 | Advanced Architecture   | Built REST API using Node.js + Express           | https://github.com/sweetiesyvi/ToDo-Console-Manager/issues/7#issuecomment-4321325883                    | Clean backend structure           |
-| Database Integration    | Used MongoDB Atlas for persistent storage        | MongoDB connection                     | Cloud-based database              |
-| CRUD System             | Full task management (create/read/update/delete) | `/api/tasks` routes                    | Core system implemented           |
+| Database Integration    | Used MongoDB Atlas for persistent storage        | https://github.com/sweetiesyvi/ToDo-Console-Manager/issues/8#issuecomment-4321330324                     | Cloud-based database              |
+| CRUD System             | Full task management (create/read/update/delete) | https://github.com/sweetiesyvi/ToDo-Console-Manager/issues/14#issuecomment-4321342194                    | Core system implemented           |
 | UI / UX Improvement     | Alerts, avatars, navigation flow                 | HTML frontend pages                    | Better user experience            |
 | Debugging               | Fixed Node.js ES module configuration issue      | Code fix (no external proof available) | Issue resolved during development |
 | System / Infrastructure | Connected backend to MongoDB Atlas cloud DB      | `.env + server configuration`          | Full-stack setup                  |
