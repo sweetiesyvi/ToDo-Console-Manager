@@ -53,7 +53,7 @@ async function startServer() {
     // ===================== TASKS =====================
     app.get('/api/tasks/:userId', async (req, res) => {
       const { userId } = req.params;
-      const tasks = await tasksCollection.find({ userId }).toArray();
+      const tasks = await tasksCollection.find({ userId: String(userId) }).toArray();
       res.json(tasks);
     });
 
