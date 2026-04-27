@@ -28,11 +28,16 @@
       list.innerHTML = '';
       tasks.forEach(t => {
         const li = document.createElement('li');
-        li.innerHTML = `${t.completed ? '<s>' + t.title + '</s>' : t.title}
-                        <button onclick="deleteTask('${t._id}')">❌</button>
-                        <button onclick="completeTask('${t._id}')">✔</button>`;
-        list.appendChild(li);
-      });
+        li.innerHTML = `
+        <span>${t.completed ? '<s>' + t.title + '</s>' : t.title}</span>
+        <div>
+          <button onclick="completeTask('${t._id}')">✔</button>
+          <button onclick="deleteTask('${t._id}')">❌</button>
+          <button onclick="editTask('${t._id}', '${t.title}')">✏️</button>
+        </div>
+      `;
+      list.appendChild(li); // 🔥 IMPORTANT
+    });
     }
 
     async function addTask() {
@@ -56,8 +61,40 @@
       loadTasks();
     }
 
-    async function completeTask(id) {
+    /*async function completeTask(id) {
       const res = await fetch(`/api/tasks/${id}`, { method: 'PUT' });
+      const data = await res.json();
+      alert(data.message);
+      loadTasks();
+    }*/
+    async function completeTask(id) {
+      const res = await fetch(`/api/tasks/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ completed: true })
+      });
+      const data = await res.json();
+      alert(data.message);
+      loadTasks();
+    }
+   /* async function editTask(id, oldTitle) {
+      const newTitle = prompt("Edit task:", oldTitle);
+      if (!newTitle || newTitle.trim() === "") return;
+
+      const res = await fetch(`/api/tasks/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: newTitle })
+      });*/
+
+    async function editTask(id, oldTitle) {
+      const newTitle = prompt("Edit task:", oldTitle);
+      if (!newTitle || newTitle.trim() === "") return;
+      const res = await fetch(`/api/tasks/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: newTitle })
+      });
       const data = await res.json();
       alert(data.message);
       loadTasks();
